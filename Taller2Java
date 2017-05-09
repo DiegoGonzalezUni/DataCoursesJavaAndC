@@ -1,0 +1,251 @@
+//Main 
+/**
+ *
+ * @author diegogonzalez
+ */
+
+public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+      
+        System.out.println("Ejercicio numero 1");
+        DistanciaMinima Dm = new DistanciaMinima();
+        Dm.DistanciaMinima();
+        
+        System.out.println("Ejercicio numero 2");
+        ElementosRepetidos ER = new ElementosRepetidos();
+        ER.ElementoRepetido();
+         
+        System.out.println("Ejercicio numero 3");
+        ParejaValorAbsoluto PV = new  ParejaValorAbsoluto();
+        PV.imprimirParejasdenumeros();
+        
+        System.out.println("Ejercicio numero 4");
+        DiferenciaMayor DM = new DiferenciaMayor();
+        DM.DiferenciaMayor();
+          
+        System.out.println("Ejercicio numero 5");
+        Productoelementos PE = new Productoelementos();
+        PE.ProductoElementos();     
+    }
+}
+
+//Ejercicio1
+package Ejercicio1;
+/**
+ *
+ * @author diegogonzalez
+ */
+
+public class DistanciaMinima {
+    public void DistanciaMinima() {
+        int Array[] = {16, 3, 10, 9, 8};
+        int d;
+        int j = 0;
+
+        for (int i = 0; i < Array.length; i++)
+        {
+           j++;
+           int k = j;
+            while(k < Array.length)
+            {
+               if(Array[i]!= Array[k])    
+               {
+                   d = Array[i] - Array[k];
+                   System.out.print(d+",");
+               }
+               else
+               {
+               }
+               k ++;       
+            }         
+            System.out.println(" ");
+        }
+    }   
+}
+Ejercicio2//
+package Ejercicio2;
+/**
+ *
+ * @author diegogonzalez
+ */
+ public class ElementosRepetidos {
+
+    public void ElementoRepetido() {
+        int A[] = {3, 5, 7, 7, 0, 3, 5};
+        
+        for(int x = 0; x < A.length; x++){
+            System.out.print( A[x] + ",");
+        }
+        
+        System.out.println("");
+
+        int j = 0;
+        int k = 0;
+        char aux = 's';
+
+        for (int i = 0; i < A.length; i++) {
+            j++;
+            k = j;
+            boolean cambio = true;
+
+            while (k < A.length) {
+
+                if (A[i] == A[k]) {
+                    cambio = false;
+                    A[i] = aux;
+                    A[k] = aux;
+                    break;
+                }else{
+                    
+                }
+                
+                k++;
+                if(cambio == true && k >= A.length){
+                    int result = i + 1;
+                    System.out.println(A[i]+" Es el numero que no se repite en el arreglo, y se encuentra en el indice " + result );
+                }else{
+               
+                }
+            }
+        }        
+        System.out.println("");
+    }
+}
+ 
+ 
+ 
+ //Ejercicio3
+ package Ejercicio3;
+ /**
+ *
+ * @author diegogonzalez
+ */
+ 
+ public class ParejaValorAbsoluto {
+
+    public void imprimirParejasdenumeros() {
+        int Array[] = {8, 9, 17, 13, 2, 14, 5, 11};
+        int d = 4;
+        int j = 0, k = 0, x = 0;
+
+        for (int i = 0; i < Array.length; i++) {
+            j++;
+            k = j;
+
+            while (k < Array.length) {
+
+                int result = Array[i] - Array[k];
+                int abs = Math.abs(result);
+                if (abs == d) {
+                    x++;
+                    System.out.print(x + ".");
+                    System.out.println("La pareja cullo resultado es" + d + "," + "son" + Array[i] + "-" + Array[k]);
+                }
+                k++;
+            }
+
+        }
+ 
+        System.out.println("");
+    }
+}
+
+ //Ejercicio4
+ package Ejercicio4;
+ /**
+ *
+ * @author diegogonzalez
+ */
+ public class DiferenciaMayor {
+
+    public void DiferenciaMayor() {
+
+        int Array[] = {16, 3, 10, 9, 8};
+
+        int d;
+        int j = 0;
+
+        for (int i = 0; i < Array.length; i++) {
+            System.out.println(" ");
+            j++;
+            int k = j;
+
+            while (k < Array.length) {
+
+                if (Array[i] > Array[k]) {
+                    d = Array[i] - Array[k];
+                    System.out.print(d + ",");
+                }
+
+                k++;
+
+            }
+
+        }
+        
+        System.out.println("");
+    }
+
+}
+
+ 
+ //Ejercicio5
+ package Ejercicio5;
+ /**
+ *
+ * @author diegogonzalez
+ */
+ public class Productoelementos {
+
+    public void ProductoElementos() {
+        int A[] = {10, 4, 1, 6, 2};
+        int B[] = {0, 0, 0, 0, 0};
+
+        for (int x = 0; x < A.length; x++) {
+
+            System.out.print(A[x] + ",");
+        }
+
+        System.out.println("");
+
+        int aux = - 1;
+        int x = -1;
+
+        for (int i = 0; i < A.length; i++) {
+            int prod = 1;
+            aux++;
+            for (int j = 0; j < A.length; j++) {
+
+                if (j != aux) {
+
+                    prod = A[j] * prod;
+                } else {
+
+                }
+
+            }
+
+            x++;
+            B[x] = prod;
+
+        }
+
+        for (int k = 0; k < B.length; k++) {
+
+            System.out.print(B[k] + ",");
+
+        }
+        
+        System.out.println("");
+
+    }
+    
+   
+
+}
