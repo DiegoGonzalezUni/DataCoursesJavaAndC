@@ -1,0 +1,77 @@
+/* 
+ * File:   main.c
+ * Author: diegogonzalez
+ *
+ * Created on 23 de abril de 2017, 18:52
+ */
+
+#include <stdio.h>
+
+int main() {
+
+    int a[5] = {0, 1, 2, 3, 4};
+    int num=5;
+
+    for (int i = 0; i < 5; i++) {
+        if (num == a[i]) {
+            if (i > a[i]) {
+            }
+            printf("Su numero esta en la pocision");
+            scanf("%d",&num);
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    #include<stdio.h>
+Main()
+{
+    int a[11] = {0,1,2,3,4,5,6,7,8,9,10};
+
+    int inf;
+    int sup;
+    int x;
+
+    printf("Ingrese el valor inferior:");
+    scanf("%d", &inf);
+    printf("Ingrese el valor superior");
+    scanf("%d", &sup);
+    printf("Ingrese el valor del numero que desea encontrar");
+    scanf("%d", &x);
+
+    int mitad = (sup + inf)/2;
+    int descuento = (sup - inf)/2;
+
+         if(a[mitad] == x)
+         {
+             return mitad;
+         }else{
+
+            if(descuento == 0)
+            {
+                return -1;
+            }
+         }
+
+         if(a[mitad] < x)
+         {
+             return inf, mitad, x;
+
+         }else{
+
+            return mitad, sup, x;
+         }
+
+    }
+
+
+
+
+
+
+
+
+
