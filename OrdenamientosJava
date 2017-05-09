@@ -1,0 +1,194 @@
+//MainInsertion
+package mainpackage;
+
+import insertpackage.*;
+
+/**
+ *
+ * @author diegogonzalez
+ */
+public class MainClass {
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        //Se crea el arreglo a recorrer 
+        int[] array = {4, 5, 9, 20, 10, 50, 10, 1, 2, 3};
+        InsertionSort S = new InsertionSort();
+        S.insetionSort(array);
+        //Se recorre el arreglo aumentando en 1 
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
+
+    }
+
+}
+
+//CodigoInsertion
+
+package insertpackage;
+
+/**
+ *
+ * @author diegogonzalez
+ */
+public class InsertionSort {
+
+    public static int insetionSort(int[] array) {
+
+        int aux = 0;
+        int i;
+        int j;
+
+        for (i = 1; i < array.length; i++) {
+            aux = array[i];
+            for (j = i - 1; j >= 0 && array[j] > aux; j--) {
+
+                array[j + 1] = array[j];
+                array[j] = aux;
+
+            }
+        }
+        return -1;
+    }
+}
+
+//MainQuick 
+import  quicksort23class.*;
+/**
+ *
+ * @author diegogonzalez
+ */
+public class QuickSort23 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+
+        QuickClass Qu = new QuickClass();
+        System.out.println("Arreglo desordenado: ");
+        int Array[] = {5, 4, 3, 7, 6, 10, 22, 33, 54, 15, 10, 10, 1, 23, 33, 500, 501, 459, 500};
+        for (int x = 0; x < Array.length; x++) {
+            System.out.print(Array[x] + ",");
+        }
+        System.out.println("");
+        System.out.println("Arreglo ordenado: ");
+        Qu.QuickClass(Array, 0, Array.length - 1);
+        for (int j = 0; j < Array.length; j++) {
+            System.out.print(Array[j] + ",");
+        }
+    }
+
+}
+
+//CodigoQuick
+
+package quicksort23class;
+
+/**
+ *
+ * @author diegogonzalez
+ */
+public class QuickClass {
+    public void QuickClass(int Arreglo[], int i, int d) {
+        int mitad = i + (d - i) / 2;
+        int izquierda = i;
+        int derecha = d;
+        int pivote = Arreglo[mitad];
+
+        while (izquierda <= derecha) {
+            while (Arreglo[izquierda] < pivote) {
+                izquierda++;
+            }
+            while (Arreglo[derecha] > pivote) {
+                derecha--;
+            }
+            if (izquierda <= derecha) {
+                int cambio = Arreglo[izquierda];
+                Arreglo[izquierda] = Arreglo[derecha];
+                Arreglo[derecha] = cambio;
+                izquierda++;
+                derecha--;
+            }
+        }
+
+        if (i < derecha) {
+
+            QuickClass(Arreglo, i, derecha);
+        }
+        if (d > izquierda) {
+
+            QuickClass(Arreglo, izquierda, d);
+        }
+
+    }
+}
+    
+//BubbleSort
+
+/**
+ *
+ * @author diegogonzalez
+ */
+
+public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        int[] array = {1, 4, 6, 2, 3, 7, 5};
+        for (int i = 0; i < array.length; i ++ )
+        {
+            System.out.print(array [i] + ",");
+            
+        }
+        System.out.println();
+        
+        int[] array2 = bubbleSort(array);
+        for(int i = 0; i < array.length; i++)
+        {
+            System.out.print(array2[i] + ",");
+        }
+        
+    }
+    
+
+    public static int[] bubbleSort(int[] unordered) {
+        int[] ordered = unordered.clone();
+        int n = unordered.length;
+        boolean swap;
+        int auxSwap;
+
+        for (int i = 0; i < n - 1; i++) {
+            swap = false;
+            
+            for (int j = 1; j < n-1; j++) {
+                if (ordered[j] > ordered[j + 1]) {
+                    auxSwap = ordered[j];
+                    ordered[j] = ordered[j + 1];
+                    ordered[j + 1] = auxSwap;
+                    
+                    swap = true;
+                    
+                }
+            }
+            
+            if (!swap)
+                break; 
+        }
+
+        return ordered;
+    }
+    
+
+}
+
+
+
+
+
+
