@@ -1,0 +1,101 @@
+package BusLineal;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+import java.util.Scanner;
+
+/**
+ *
+ * @author diegogonzalez
+ */
+public class BusquedaLineal {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+
+//Se ingresa el tamaño del arreglo que se desea.
+        int Array[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        Scanner entrada = new Scanner(System.in);
+
+//Se le pido al usuario que ingrese el dato.
+        System.out.print("Que numero desea buscar: ");
+        int num = entrada.nextInt();
+
+//Se recorre el arreglo dentor de un ciclo y despues una condicion 
+        for (int i = 0; i < Array.length; i++) {
+            if (num == Array[i]) {
+                if (i > Array[i]) {
+
+                    System.out.println("Su numero no esta en el arreglo");
+
+                }
+
+//Se le muestra al usuario en consola el dato encontrado. 
+                System.out.println("El numero si esta en el arreglo y se encuentra en la posicion " + i);
+
+            }
+        }
+    }
+
+}
+
+
+
+
+
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package busuqedabinaria;
+
+/**
+ *
+ * @author diegogonzalez
+ */
+public class BusquedaBinaria {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        //Se le da el tamañano al arreglo
+        int[] vector = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 45, 55, 76, 98, 100};
+        //Se ingrensa el valor que se desea buscar
+        int buscandoValor = 12;
+        //Se imprime en la consolo el resultado de la posicion
+        System.out.println(BusquedaBinaria(vector, buscandoValor));
+
+    }
+
+    public static int BusquedaBinaria(int vector[], int dato) {
+        //Se crea el arreglo
+        int n = vector.length;
+        //Se crean los demás valores necesarios
+        int centro, infe = 0, supe = n - 1;
+        //En el ciclo se da a saber que inferior tiene que ser menor o igual a superior, se le da el valor a centro y que devielva la variable centro
+        while (infe <= supe) {
+            centro = (supe + infe) / 2;
+            //Si el vector en la pocision centro es igual a dato, que retoner centro.
+            if (vector[centro] == dato) {
+                return centro;
+            //Se dice que dato tiene que ser menor al array en la posicion de centro     
+            } else if (dato < vector[centro]) {
+                supe = centro - 1;
+            } else {
+                infe = centro + 1;
+            }
+        }
+        return -1;
+    }
+
+}
